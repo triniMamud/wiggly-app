@@ -12,36 +12,45 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoContainer: {
-    marginBottom: 20,
+    //marginBottom: 20,
     alignItems: 'center',
   },
   logo: {
     width: 80,
     height: 80,
   },
-  welcomeText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
+  titleContainer: {
+    //marginBottom: 20,
+    alignItems: 'center',
+  },
+  titleImage: {
+    width: 200,
+    height: 100,
+    marginBottom: -15
   },
   subtitleText: {
     fontSize: 16,
     color: '#888',
-    marginBottom: 20,
+    //marginBottom: 10,
+    textAlign: 'center'
   },
   imageCircle: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+    width: 260,
+    height: 260,
+    borderRadius: 200,
     backgroundColor: '#E1D7F0',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 30,
+    textAlign: 'center',
+    alignContent: 'center',
+    marginTop: '20%',
   },
   mainImage: {
-    width: 180,
-    height: 180,
-    borderRadius: 90,
+    width: '100%',
+    height: '100%',
+    //borderRadius: 150,
+    borderBottomRightRadius: 200,
+    borderBottomLeftRadius: 200
   },
   buttonContainer: {
     width: '100%',

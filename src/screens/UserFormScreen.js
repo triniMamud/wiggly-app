@@ -1,30 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Alert, Modal, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Alert, Modal, Text, TouchableOpacity, Image } from 'react-native';
 import FormCard from '../components/FormCard';
-import DropDownPicker from 'react-native-dropdown-picker';
+import confettiAnimation from '../../assets/confetti.gif';
+import CongratulationsModal from '../components/modals/CongratulationsModal';
+
 
 const questions = [
-  { question: '¿Permiten mascotas?', answerType: 'yesno', index: 17},
-  { question: '¿Sos propietario/a?', answerType: 'yesno', index: 16},
-  //¿Hay red de contención?
-  { question: '¿Hay espacios abiertos?', answerType: 'input', index: 15, options: [{value: 'patio', label: 'Patio/Jardín'}, {value: 'terraza', label: 'Terraza'}, {value: 'balcon', label: 'Balcón'}, {value: 'ninguno', label: 'Ninguno'}]},
-  { question: 'Arrastra y suelta fotos de tu casa', answerType: 'photo', index: 14 },
-  { question: 'Seleccioná el tipo de hogar donde vivis', answerType: 'input', index: 13, options: [{value: 'casa', label: 'Casa'}, {value: 'departamento', label: 'Departamento'}, {value: 'ph', label: 'PH'}, {value: 'otro', label: 'Otro'}]},
-  { question: 'Ingresá a cuidado de quien quedaría la mascota en caso de que tengas que viajar', answerType: 'input', index: 12, numeric: false },
-  { question: '¿Estás de acuerdo con que el refugio haga un seguimiento del caso?', answerType: 'yesno', index: 11},
-  { question: 'En caso de que la mascota no esté castrada, ¿podrías comprometerte a hacerlo?', answerType: 'yesno', index: 10},
-  { question: 'Ingresá dónde dormiría', answerType: 'input', index: 9, numeric: false },
-  { question: '¿Cuantas veces saldría a caminar?', answerType: 'input', index: 8, numeric: false },
-  { question: '¿Cuanto tiempo se quedería solo/a?', answerType: 'input', index: 7, numeric: false },
-  { question: 'Ingresá cual es tu situación laboral', answerType: 'input', index: 6, numeric: false },
-  { question: '¿Podrías costear un/a paseador/a de ser necesario?', answerType: 'yesno', index: 5},
-  { question: '¿Podrías costear un/a entrenador/a de ser necesario?', answerType: 'yesno', index: 4},
-  { question: '¿Estás conciente de los gastos que puede implicar una mascota?', answerType: 'yesno', index: 3},
-  //Ingresa más informacion (edad, si le gustan los perros/gatos, ...)
-  { question: '¿Algún menor?', answerType: 'yesno', index: 2},
-  { question: '¿Con cuantas personas viviría?', answerType: 'input', index: 1, numeric: true },
-  //Ingresa más informacion sobre tu mascota
-  { question: '¿Tenés otras mascotas?', answerType: 'yesno', index: 0 },
+  { question: '¿Permiten mascotas?', answerType: 'yesno', index: 19 },
+  { question: '¿Sos propietario/a?', answerType: 'yesno', index: 18 },
+  { question: '¿Hay red de contención?', answerType: 'yesno', index: 17 },
+  { question: '¿Hay espacios abiertos?', answerType: 'select', extendedPlaceholder: 'Tipo de espacio abierto', index: 16,
+    items: [
+      { key: 1, label: 'Patio/Jardin', value: 'patio' },
+      { key: 2, label: 'Terraza', value: 'terraza' },
+      { key: 3, label: 'Balcón', value: 'balcon' },
+      { key: 4, label: 'Ninguno', value: 'ninguno' }
+    ]
+  },
+  { question: 'Sube fotos de tu casa', answerType: 'photo', extendedPlaceholder: 'No es necesario, pero podría agilizar el proceso de adopción' , index: 15},
+  { question: 'Seleccioná el tipo de hogar donde vivis', answerType: 'select', extendedPlaceholder: 'Tipo de vivienda', index: 14,
+    items: [
+      { key: 1, label: 'Casa', value: 'casa' },
+      { key: 2, label: 'Departamento', value: 'departamento' },
+      { key: 3, label: 'PH', value: 'ph'},
+      { key: 4, label: 'Otro', value: 'otro' }
+    ]
+  },
+  { question: '¿Con quién se quedaría si tenés que irte de viaje?', answerType: 'input', extendedPlaceholder: '...', numeric: false, index: 13 },
+  { question: '¿Estás de acuerdo con que el refugio haga un seguimiento del caso?', answerType: 'yesno', index: 12 },
+  { question: 'En caso de que la mascota no esté castrada, ¿podrías comprometerte a hacerlo?', answerType: 'yesno', index: 11 },
+  { question: 'Ingresá dónde dormiría', answerType: 'input', extendedPlaceholder: '(en el living, afuera, en la habitación, ...)', numeric: false, index: 10 },
+  { question: '¿Cuantas veces saldría a caminar?', answerType: 'input', extendedPlaceholder: '...', numeric: false, index: 9 },
+  { question: '¿Cuanto tiempo se quedería solo/a?', answerType: 'input', extendedPlaceholder: '...', numeric: false, index: 8 },
+  { question: 'Ingresá cual es tu situación laboral', answerType: 'input', extendedPlaceholder: '...', numeric: false, index: 7 },
+  { question: '¿Podrías costear un/a paseador/a de ser necesario?', answerType: 'yesno', index: 6 },
+  { question: '¿Podrías costear un/a entrenador/a de ser necesario?', answerType: 'yesno', index: 5 },
+  { question: '¿Estás conciente de los gastos que puede implicar una mascota?', answerType: 'yesno', index: 4 },
+  { question: '¿Algun menor?', answerType: 'yesno', extendedPlaceholder: 'Ingresa más informacion (edad, si le gustan los perros/gatos, ...)', numeric: false, index: 3 },
+  { question: '¿Con cuantas personas viviría?', answerType: 'input', index: 1, extendedPlaceholder: '...', numeric: true, index: 2 },
+  { question: '¿Tenés otras mascotas?', answerType: 'yesno', extendedPlaceholder: 'Ingresa más informacion sobre tu mascota', numeric: false, index: 1 }
 ];
 
 const UserFormScreen = ({navigation}) => {
@@ -83,30 +97,19 @@ const UserFormScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      {questions.map((question) => (
+      {questions.map((question, index) => (
         <FormCard
-          key={question.index}
+          key={index}
           question={question}
           totalCards={questions.length}
           handleAnswer={handleAnswer}
         />
       ))}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={isModalVisible}
-        onRequestClose={handleCloseModal}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalText}>Congratulations!</Text>
-            <Text style={styles.modalText}>You have completed the form.</Text>
-            <TouchableOpacity style={styles.modalButton} onPress={handleCloseModal}>
-              <Text style={styles.modalButtonText}>OK</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+      <CongratulationsModal
+        isVisible={isModalVisible}
+        onClose={handleCloseModal}
+        confettiAnimation={confettiAnimation}
+      />
     </View>
   );
 };
@@ -144,6 +147,53 @@ const styles = StyleSheet.create({
   },
   modalButtonText: {
     color: 'white',
+  },
+  gif: {
+    width: 100,
+    height: 100,
+  },
+
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalContainer: {
+    width: '80%',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 20,
+    alignItems: 'center',
+    elevation: 10,
+  },
+  lottieAnimation: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  closeButton: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  closeButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

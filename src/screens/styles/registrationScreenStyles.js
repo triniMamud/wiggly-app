@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#FDF8F3',
   },
+  shelterInputContainer: {
+    position: 'absolute',
+    top: '75%'
+  },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -45,32 +49,49 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
+    width: '80%',
+    justifyContent: 'center'
   },
   checkboxRow: {
     flexDirection: 'row',
     alignItems: 'center',
     marginRight: 15,
+    marginLeft: 15,
+    justifyContent: 'center',
+    width: '33%'
+  },
+  errorText: {
+    color: 'red',
+    marginTop: -10,
+    //marginBottom: 10,
+    fontSize: 10,
+    textAlign: 'left'
+  },
+  shelterErrorText: {
+    position: 'absolute',
+    top: '76%',
   },
   checkboxLabel: {
-    marginHorizontal: 10,
+    //marginHorizontal: 5,
     color: '#E76801',
+    fontSize: 14
   },
   registerButton: {
-    backgroundColor: '#E76801',
     padding: 15,
     borderRadius: 50,
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
-    marginTop: 100
+    marginTop: '30%',
   },
   registerButtonText: {
     color: '#FFF',
     fontSize: 16,
   },
   signInText: {
-    color: '#000',
-    marginTop: 20,
+    textAlign: 'center',
+    color: '#787878',
+    //marginTop: 10,
   },
   signInLink: {
     color: '#E76801',

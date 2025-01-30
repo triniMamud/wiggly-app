@@ -14,6 +14,31 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-WigglyApp-WigglyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WigglyApp-WigglyAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9CCE2B09EB5F4A08BD402E00 /* AdobeStock_258099418.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B5ABBA0438A44BCB529AD9D /* AdobeStock_258099418.jpeg */; };
+		7E061A42F76140D2979A030B /* AdobeStock_556948568.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AADD92767B747ECA959E07D /* AdobeStock_556948568.png */; };
+		F1C7EBE6A6194946BE40EDF6 /* AdobeStock_559055944.png in Resources */ = {isa = PBXBuildFile; fileRef = 3016422545834F9AA9D9151D /* AdobeStock_559055944.png */; };
+		8A805C4FD4E241B5A19FB858 /* AdobeStock_599085812.png in Resources */ = {isa = PBXBuildFile; fileRef = 66173B8C10E046EFA40664FC /* AdobeStock_599085812.png */; };
+		B778DFC06A4745C2B840380D /* AdobeStock_601542469.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E141EF56CEF40BA8EDCDB06 /* AdobeStock_601542469.png */; };
+		393167CCBC684043A9B296FD /* AdobeStock_601655427.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BC25CD3546455A9B9C5687 /* AdobeStock_601655427.png */; };
+		B9173BF4DBF64EDCB152BB11 /* AdobeStock_604133572.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 10CBE553CFC34A86A58779BD /* AdobeStock_604133572.jpeg */; };
+		F5E8D0846042469FA870D64A /* AdobeStock_610288835.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5D41FA1624756B728DD2D /* AdobeStock_610288835.png */; };
+		B2320D024E2945FE9011DB2E /* aku.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 38F790EF2B3D4B6DA2B4436E /* aku.jpeg */; };
+		7BDAA894EBA1474FBF468775 /* animal-shelter-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DC869E855F98418C8695D9DE /* animal-shelter-orange.png */; };
+		5624A832891B40599EA22649 /* animal-shelter.png in Resources */ = {isa = PBXBuildFile; fileRef = 269A0C489B4F43D4B00684CD /* animal-shelter.png */; };
+		DFD48EB55D8D479CA0277EAA /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6294E1C21FC442239791AC1B /* appIcon.png */; };
+		84F8740B4BBD46DEB71F4E40 /* chihiro.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44767F0E890A433D99022113 /* chihiro.jpeg */; };
+		D6340B5A567742838D5FA7EF /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1DE53940EC59472C944D8B0E /* confetti.gif */; };
+		C91DC08F178D43FCA21FFCDF /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBC103F5B473CB3CBD696 /* confetti.json */; };
+		9E67C8BC9C7340F3945D855E /* heart-dog-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 691A7563AC7744E2A9D9B714 /* heart-dog-orange.png */; };
+		A02C18D7FA5A497EA70464A4 /* heart-dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A022889307145E6BE6333B3 /* heart-dog.png */; };
+		E831619504FA4568AC694D59 /* home-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2511F539611A496BB18C30C1 /* home-icon.png */; };
+		9103F8ADDF3F44D6BFC7D6B5 /* human-pet-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = E3B000F992EF4D2692C729C5 /* human-pet-orange.png */; };
+		CA8F9D35DA844869A3949E9E /* human-pet.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C584F58C0F41CE925A8C8F /* human-pet.png */; };
+		387E315244494184A5D4EE50 /* kurama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C9557B7CA4DAA8D901B76 /* kurama.jpg */; };
+		B2379A4A587C435E80E17338 /* perro-lentes-corazones.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A49B2F6BDF24A0F97D6A6FF /* perro-lentes-corazones.png */; };
+		59F8100AC8404DF9B7D24485 /* user-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE87B615834A412EA94BCF16 /* user-logo.jpg */; };
+		7D722913A13E4D68B18D48AB /* wiggly.png in Resources */ = {isa = PBXBuildFile; fileRef = 62FD301278324DDB859E89C9 /* wiggly.png */; };
+		66D6A7B6FD1E4B928672DEAF /* zeke.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 77DD75162DD8453D957AFCB5 /* zeke.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +61,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WigglyApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WigglyApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WigglyApp/main.m; sourceTree = "<group>"; };
-	    13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = WigglyApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = WigglyApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WigglyApp-WigglyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WigglyApp-WigglyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-WigglyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WigglyApp.debug.xcconfig"; path = "Target Support Files/Pods-WigglyApp/Pods-WigglyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WigglyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WigglyApp.release.xcconfig"; path = "Target Support Files/Pods-WigglyApp/Pods-WigglyApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +70,31 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WigglyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-WigglyApp-WigglyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WigglyApp-WigglyAppTests.release.xcconfig"; path = "Target Support Files/Pods-WigglyApp-WigglyAppTests/Pods-WigglyApp-WigglyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9B5ABBA0438A44BCB529AD9D /* AdobeStock_258099418.jpeg */ = {isa = PBXFileReference; name = "AdobeStock_258099418.jpeg"; path = "../assets/AdobeStock_258099418.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9AADD92767B747ECA959E07D /* AdobeStock_556948568.png */ = {isa = PBXFileReference; name = "AdobeStock_556948568.png"; path = "../assets/AdobeStock_556948568.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3016422545834F9AA9D9151D /* AdobeStock_559055944.png */ = {isa = PBXFileReference; name = "AdobeStock_559055944.png"; path = "../assets/AdobeStock_559055944.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66173B8C10E046EFA40664FC /* AdobeStock_599085812.png */ = {isa = PBXFileReference; name = "AdobeStock_599085812.png"; path = "../assets/AdobeStock_599085812.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E141EF56CEF40BA8EDCDB06 /* AdobeStock_601542469.png */ = {isa = PBXFileReference; name = "AdobeStock_601542469.png"; path = "../assets/AdobeStock_601542469.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		44BC25CD3546455A9B9C5687 /* AdobeStock_601655427.png */ = {isa = PBXFileReference; name = "AdobeStock_601655427.png"; path = "../assets/AdobeStock_601655427.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		10CBE553CFC34A86A58779BD /* AdobeStock_604133572.jpeg */ = {isa = PBXFileReference; name = "AdobeStock_604133572.jpeg"; path = "../assets/AdobeStock_604133572.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DEA5D41FA1624756B728DD2D /* AdobeStock_610288835.png */ = {isa = PBXFileReference; name = "AdobeStock_610288835.png"; path = "../assets/AdobeStock_610288835.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		38F790EF2B3D4B6DA2B4436E /* aku.jpeg */ = {isa = PBXFileReference; name = "aku.jpeg"; path = "../assets/aku.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC869E855F98418C8695D9DE /* animal-shelter-orange.png */ = {isa = PBXFileReference; name = "animal-shelter-orange.png"; path = "../assets/animal-shelter-orange.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		269A0C489B4F43D4B00684CD /* animal-shelter.png */ = {isa = PBXFileReference; name = "animal-shelter.png"; path = "../assets/animal-shelter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6294E1C21FC442239791AC1B /* appIcon.png */ = {isa = PBXFileReference; name = "appIcon.png"; path = "../assets/appIcon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		44767F0E890A433D99022113 /* chihiro.jpeg */ = {isa = PBXFileReference; name = "chihiro.jpeg"; path = "../assets/chihiro.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1DE53940EC59472C944D8B0E /* confetti.gif */ = {isa = PBXFileReference; name = "confetti.gif"; path = "../assets/confetti.gif"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		14EFBC103F5B473CB3CBD696 /* confetti.json */ = {isa = PBXFileReference; name = "confetti.json"; path = "../assets/confetti.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		691A7563AC7744E2A9D9B714 /* heart-dog-orange.png */ = {isa = PBXFileReference; name = "heart-dog-orange.png"; path = "../assets/heart-dog-orange.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A022889307145E6BE6333B3 /* heart-dog.png */ = {isa = PBXFileReference; name = "heart-dog.png"; path = "../assets/heart-dog.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2511F539611A496BB18C30C1 /* home-icon.png */ = {isa = PBXFileReference; name = "home-icon.png"; path = "../assets/home-icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3B000F992EF4D2692C729C5 /* human-pet-orange.png */ = {isa = PBXFileReference; name = "human-pet-orange.png"; path = "../assets/human-pet-orange.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93C584F58C0F41CE925A8C8F /* human-pet.png */ = {isa = PBXFileReference; name = "human-pet.png"; path = "../assets/human-pet.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E9C9557B7CA4DAA8D901B76 /* kurama.jpg */ = {isa = PBXFileReference; name = "kurama.jpg"; path = "../assets/kurama.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A49B2F6BDF24A0F97D6A6FF /* perro-lentes-corazones.png */ = {isa = PBXFileReference; name = "perro-lentes-corazones.png"; path = "../assets/perro-lentes-corazones.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AE87B615834A412EA94BCF16 /* user-logo.jpg */ = {isa = PBXFileReference; name = "user-logo.jpg"; path = "../assets/user-logo.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		62FD301278324DDB859E89C9 /* wiggly.png */ = {isa = PBXFileReference; name = "wiggly.png"; path = "../assets/wiggly.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		77DD75162DD8453D957AFCB5 /* zeke.jpeg */ = {isa = PBXFileReference; name = "zeke.jpeg"; path = "../assets/zeke.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +174,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C7659B03E92F40DEB2E3CE04 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +200,39 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		C7659B03E92F40DEB2E3CE04 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				9B5ABBA0438A44BCB529AD9D /* AdobeStock_258099418.jpeg */,
+				9AADD92767B747ECA959E07D /* AdobeStock_556948568.png */,
+				3016422545834F9AA9D9151D /* AdobeStock_559055944.png */,
+				66173B8C10E046EFA40664FC /* AdobeStock_599085812.png */,
+				3E141EF56CEF40BA8EDCDB06 /* AdobeStock_601542469.png */,
+				44BC25CD3546455A9B9C5687 /* AdobeStock_601655427.png */,
+				10CBE553CFC34A86A58779BD /* AdobeStock_604133572.jpeg */,
+				DEA5D41FA1624756B728DD2D /* AdobeStock_610288835.png */,
+				38F790EF2B3D4B6DA2B4436E /* aku.jpeg */,
+				DC869E855F98418C8695D9DE /* animal-shelter-orange.png */,
+				269A0C489B4F43D4B00684CD /* animal-shelter.png */,
+				6294E1C21FC442239791AC1B /* appIcon.png */,
+				44767F0E890A433D99022113 /* chihiro.jpeg */,
+				1DE53940EC59472C944D8B0E /* confetti.gif */,
+				14EFBC103F5B473CB3CBD696 /* confetti.json */,
+				691A7563AC7744E2A9D9B714 /* heart-dog-orange.png */,
+				6A022889307145E6BE6333B3 /* heart-dog.png */,
+				2511F539611A496BB18C30C1 /* home-icon.png */,
+				E3B000F992EF4D2692C729C5 /* human-pet-orange.png */,
+				93C584F58C0F41CE925A8C8F /* human-pet.png */,
+				5E9C9557B7CA4DAA8D901B76 /* kurama.jpg */,
+				0A49B2F6BDF24A0F97D6A6FF /* perro-lentes-corazones.png */,
+				AE87B615834A412EA94BCF16 /* user-logo.jpg */,
+				62FD301278324DDB859E89C9 /* wiggly.png */,
+				77DD75162DD8453D957AFCB5 /* zeke.jpeg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +329,31 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9CCE2B09EB5F4A08BD402E00 /* AdobeStock_258099418.jpeg in Resources */,
+				7E061A42F76140D2979A030B /* AdobeStock_556948568.png in Resources */,
+				F1C7EBE6A6194946BE40EDF6 /* AdobeStock_559055944.png in Resources */,
+				8A805C4FD4E241B5A19FB858 /* AdobeStock_599085812.png in Resources */,
+				B778DFC06A4745C2B840380D /* AdobeStock_601542469.png in Resources */,
+				393167CCBC684043A9B296FD /* AdobeStock_601655427.png in Resources */,
+				B9173BF4DBF64EDCB152BB11 /* AdobeStock_604133572.jpeg in Resources */,
+				F5E8D0846042469FA870D64A /* AdobeStock_610288835.png in Resources */,
+				B2320D024E2945FE9011DB2E /* aku.jpeg in Resources */,
+				7BDAA894EBA1474FBF468775 /* animal-shelter-orange.png in Resources */,
+				5624A832891B40599EA22649 /* animal-shelter.png in Resources */,
+				DFD48EB55D8D479CA0277EAA /* appIcon.png in Resources */,
+				84F8740B4BBD46DEB71F4E40 /* chihiro.jpeg in Resources */,
+				D6340B5A567742838D5FA7EF /* confetti.gif in Resources */,
+				C91DC08F178D43FCA21FFCDF /* confetti.json in Resources */,
+				9E67C8BC9C7340F3945D855E /* heart-dog-orange.png in Resources */,
+				A02C18D7FA5A497EA70464A4 /* heart-dog.png in Resources */,
+				E831619504FA4568AC694D59 /* home-icon.png in Resources */,
+				9103F8ADDF3F44D6BFC7D6B5 /* human-pet-orange.png in Resources */,
+				CA8F9D35DA844869A3949E9E /* human-pet.png in Resources */,
+				387E315244494184A5D4EE50 /* kurama.jpg in Resources */,
+				B2379A4A587C435E80E17338 /* perro-lentes-corazones.png in Resources */,
+				59F8100AC8404DF9B7D24485 /* user-logo.jpg in Resources */,
+				7D722913A13E4D68B18D48AB /* wiggly.png in Resources */,
+				66D6A7B6FD1E4B928672DEAF /* zeke.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

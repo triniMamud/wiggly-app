@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, ActivityIndicator, ScrollView} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, TextInput, TouchableOpacity, ActivityIndicator, ScrollView, Animated} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from './styles/registrationScreenStyles';
@@ -16,6 +16,7 @@ const RegistrationScreen = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [checkboxError, setCheckboxError] = useState(true);
   const { showModal } = useGlobalModal();
+  const [colorAnim] = useState(new Animated.Value(0));
 
 
   const onSubmit = async data => {
@@ -65,6 +66,19 @@ const RegistrationScreen = ({navigation}) => {
     return isChecked || 'Al menos una opción debe estar seleccionada';
   };
 
+  useEffect(() => {
+    Animated.timing(colorAnim, {
+      toValue: !isValid ? 0 : 1,
+      duration: 150,
+      useNativeDriver: false,
+    }).start();
+  }, [isValid]);
+
+  const buttonColor = colorAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['#787878', '#E76801'],
+  });
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -73,48 +87,53 @@ const RegistrationScreen = ({navigation}) => {
           control={control}
           name="name"
           defaultValue=""
-          rules={{ required: 'Nombre completo es requerido' }}
+          rules={{ required: true }}
           render={({field: {onChange, value}}) => (
             <TextInput
               style={[styles.input, errors.name && { borderColor: 'red' }]}
-              placeholder="Nombre completo"
+              placeholder={errors.name ? "Nombre completo es requerido" : "Nombre completo"}
+              placeholderTextColor={errors.name ? 'red' : '#67635d'}
               value={value}
               onChangeText={onChange}
             />
           )}
         />
-        {errors.name && <Text style={styles.errorText}>{errors.name.message}</Text>}
         <Controller
           control={control}
           name="lastName"
           defaultValue=""
-          rules={{ required: 'Apellido es requerido' }}
+          rules={{ required: true }}
           render={({field: {onChange, value}}) => (
             <TextInput
               style={[styles.input, errors.lastName && { borderColor: 'red' }]}
-              placeholder="Apellido"
+              placeholder={errors.lastName ? "Apellido es requerido" : "Apellido"}
+              placeholderTextColor={errors.lastName ? 'red' : '#67635d'}
               value={value}
               onChangeText={onChange}
             />
           )}
         />
-        {errors.lastName && <Text style={styles.errorText}>{errors.lastName.message}</Text>}
         <Controller
           control={control}
           name="email"
           defaultValue=""
-          rules={{ required: 'Email es requerido' }}
+          rules={{ 
+            required: "Email es requerido", 
+            pattern: {
+              value: /^(?!^\s*$)([^\s@]+@[^\s@]+\.[^\s@]+)$/,
+            } 
+          }}
           render={({field: {onChange, value}}) => (
             <TextInput
               style={[styles.input, errors.email && { borderColor: 'red' }]}
-              placeholder="Email"
+              placeholder={errors.email ? errors.email.message : "Email"}
+              placeholderTextColor={errors.email ? 'red' : '#67635d'}
               keyboardType="email-address"
               value={value}
               onChangeText={onChange}
             />
           )}
         />
-        {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
         <View style={styles.passwordContainer}>
           <Controller
             control={control}
@@ -124,7 +143,8 @@ const RegistrationScreen = ({navigation}) => {
             render={({field: {onChange, value}}) => (
               <TextInput
                 style={[styles.input, errors.password && { borderColor: 'red' }]}
-                placeholder="Contraseña"
+                placeholder={errors.password ? "Contraseña es requerida" : "Contraseña"}
+                placeholderTextColor={errors.password ? 'red' : '#67635d'}
                 secureTextEntry={!showPass}
                 value={value}
                 onChangeText={onChange}
@@ -141,17 +161,17 @@ const RegistrationScreen = ({navigation}) => {
             />
           </TouchableOpacity>
         </View>
-        {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
         <View style={styles.row}>
           <Controller
             control={control}
             name="age"
             defaultValue=""
-            rules={{ required: 'Edad es requerida' }}
+            rules={{ required: true }}
             render={({field: {onChange, value}}) => (
               <TextInput
                 style={[styles.input, styles.halfInput, errors.age && { borderColor: 'red' }]}
-                placeholder="Edad"
+                placeholder={errors.age ? "Edad es requerida" : "Edad"}
+                placeholderTextColor={errors.age ? 'red' : '#67635d'}
                 keyboardType="numeric"
                 value={value}
                 onChangeText={onChange}
@@ -162,11 +182,12 @@ const RegistrationScreen = ({navigation}) => {
             control={control}
             name="dni"
             defaultValue=""
-            rules={{ required: 'DNI es requerido' }}
+            rules={{ required: true }}
             render={({field: {onChange, value}}) => (
               <TextInput
                 style={[styles.input, styles.halfInput, errors.dni && { borderColor: 'red' }]}
-                placeholder="DNI"
+                placeholder={errors.dni ? "DNI es requerido" : "DNI"}
+                placeholderTextColor={errors.dni ? 'red' : '#67635d'}
                 keyboardType="numeric"
                 value={value}
                 onChangeText={onChange}
@@ -174,8 +195,6 @@ const RegistrationScreen = ({navigation}) => {
             )}
           />
         </View>
-        {errors.age && <Text style={styles.errorText}>{errors.age.message}</Text>}
-        {errors.dni && <Text style={styles.errorText}>{errors.dni.message}</Text>}
         <View style={styles.row}>
           <Controller
             control={control}
@@ -185,7 +204,8 @@ const RegistrationScreen = ({navigation}) => {
             render={({field: {onChange, value}}) => (
               <TextInput
                 style={[styles.input, styles.halfInput, errors.phone && { borderColor: 'red' }]}
-                placeholder="Celular"
+                placeholder={errors.phone ? "Celular es requerido" : "Celular"}
+                placeholderTextColor={errors.phone ? 'red' : '#67635d'}
                 keyboardType="phone-pad"
                 value={value}
                 onChangeText={onChange}
@@ -196,19 +216,18 @@ const RegistrationScreen = ({navigation}) => {
             control={control}
             name="location"
             defaultValue=""
-            rules={{ required: 'Ubicación es requerida' }}
+            rules={{ required: true }}
             render={({field: {onChange, value}}) => (
               <TextInput
                 style={[styles.input, styles.halfInput, errors.location && { borderColor: 'red' }]}
-                placeholder="Ubicación"
+                placeholder={errors.location ? "Ubicación es requerida" : "Ubicación"}
+                placeholderTextColor={errors.location ? 'red' : '#67635d'}
                 value={value}
                 onChangeText={onChange}
               />
             )}
           />
         </View>
-        {errors.phone && <Text style={styles.errorText}>{errors.phone.message}</Text>}
-        {errors.location && <Text style={styles.errorText}>{errors.location.message}</Text>}
         <View style={styles.checkboxContainer}>
           <View style={styles.checkboxRow}>
             <Controller
@@ -248,7 +267,7 @@ const RegistrationScreen = ({navigation}) => {
                 />
               )}
             />
-            <Text style={styles.checkboxLabel}>Transito</Text>
+            <Text style={styles.checkboxLabel}>Tránsito</Text>
           </View>
           <View style={styles.checkboxRow}>
             <Controller
@@ -272,31 +291,34 @@ const RegistrationScreen = ({navigation}) => {
             <Text style={styles.checkboxLabel}>Refugio</Text>
           </View>
         </View>
-        {checkboxError && <Text style={styles.errorText}>Al menos una opción debe estar seleccionada</Text>}
+        <View style={styles.shelterErrorText}>
+          {checkboxError && <Text style={styles.errorText}>*Al menos una opción debe estar seleccionada</Text>}
+        </View>
         {isShelter && (
           <Controller
             control={control}
             name="shelterName"
             defaultValue=""
-            rules={{ required: 'Nombre del refugio es requerido si selecciona Refugio' }}
+            rules={{ required: true }}
             render={({field: {onChange, value}}) => (
               <TextInput
-                style={[styles.input, errors.shelterName && { borderColor: 'red' }]}
-                placeholder="Nombre del refugio"
+                style={[styles.input, styles.shelterInputContainer, errors.shelterName && { borderColor: 'red' }]}
+                placeholder={errors.shelterName ? "Nombre del refugio es requerido" : "Nombre del refugio"}
+                placeholderTextColor={errors.shelterName ? 'red' : '#67635d'}
                 value={value}
                 onChangeText={onChange}
               />
             )}
           />
         )}
-        {isShelter && errors.shelterName && <Text style={styles.errorText}>{errors.shelterName.message}</Text>}
-        <TouchableOpacity
-          style={[styles.registerButton, !isValid && { backgroundColor: '#787878' }]}
-          onPress={handleSubmit(onSubmit)}
-          disabled={!isValid}
-        >
-        <Text style={styles.registerButtonText}>REGISTRARSE</Text>
-        </TouchableOpacity>
+        <Animated.View style={[styles.registerButton, { backgroundColor: buttonColor }]}>
+          <TouchableOpacity
+            onPress={handleSubmit(onSubmit)}
+            disabled={!isValid}
+          >
+            <Text style={styles.registerButtonText}>REGISTRARSE</Text>
+          </TouchableOpacity>
+        </Animated.View>
         <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
           <Text style={styles.signInText}>
             ¿Ya tenés una cuenta?{' '}

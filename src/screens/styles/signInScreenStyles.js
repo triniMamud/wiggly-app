@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
+    marginTop: 10
   },
   eyeIcon: {
     position: 'absolute',
@@ -48,19 +49,19 @@ const styles = StyleSheet.create({
   forgotPasswordText: {
     textAlign: 'right',
     color: '#FDA769',
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: '400',
-    marginVertical: 10,
-    width: '48%'
+    marginBottom: 10,
+    width: '48%',
+    textDecorationLine: 'underline',
   },
   signInButton: {
-    backgroundColor: '#E76801',
     padding: 15,
     borderRadius: 50,
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
-    marginTop: 100
+    marginTop: 150
   },
   signInButtonText: {
     color: '#FFF',
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
   noAccountText: {
     textAlign: 'center',
     color: '#787878',
+    //marginTop: 20
   },
   registerLink: {
     color: '#E76801',

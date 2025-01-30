@@ -9,15 +9,20 @@ const LandingScreen = ({navigation}) => {
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
-            source={require('../../assets/user-logo.jpg')}
+            source={require('../../assets/logo_naranja.png')}
           />
         </View>
-        <Text style={styles.welcomeText}>¡Bienvenido a Wiggly!</Text>
+        <View style={styles.titleContainer}>
+          <Image
+            style={styles.titleImage}
+            source={require('../../assets/texto_negro.png')}
+          />
+        </View>
         <Text style={styles.subtitleText}>La app que une corazones</Text>
         <View style={styles.imageCircle}>
           <Image
             style={styles.mainImage}
-            source={require('../../assets/perro-lentes-corazones.png')}
+            source={require('../../assets/perro_lentes_corazones.png')}
           />
         </View>
       </View>

@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import {useMemo} from 'react';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,8 +19,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 8,
-
+    marginBottom: 5,
+    marginTop: -10
   },
   favoriteIcon: {
     width: 30,
@@ -28,12 +29,13 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingBottom: 20,
-    paddingTop: 10,
+    paddingBottom: 15,
+    paddingTop: 5,
     justifyContent: 'flex-start',
   },
   detailContainer: {
-    paddingBottom: 100
+    paddingBottom: 100,
+    overflow: 'visible'
   },
   bottomSheet: {
     flex: 1,
@@ -55,8 +57,8 @@ const styles = StyleSheet.create({
   petAttributesContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 3,
+    //marginTop: 3,
   },
   petAttribute: {
     alignItems: 'center',
@@ -86,13 +88,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
+    position: 'absolute',
+    bottom: 10,
+    left: '10%',
+    right: '10%',
     backgroundColor: '#E76801',
-    alignItems: 'center',
-    marginTop: 20,
-    padding: 15,
     borderRadius: 50,
-    marginBottom: 20,
-    width: '80%',
+    paddingVertical: 15,
+    alignItems: 'center',
   },
   buttonText: {
     color: '#FFF',
@@ -106,7 +109,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: 10
+    marginTop: 5,
+    marginBottom: 5
   },
   detailText: {
     color: '#000',
@@ -115,15 +119,20 @@ const styles = StyleSheet.create({
   fadeContainer: {
     position: 'relative',
     paddingTop: 30,
-    width: '100%',
-    alignItems: 'center'
   },
   gradientOverlay: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 180,
     left: 0,
     right: 0,
-    height: 110
+    height: 100
+  },
+  scrollContainer: {
+    flex: 1, 
+    marginBottom: 25
+  },
+  scrollContent: {
+    //paddingBottom: 100, // Ensures space at the bottom for scrolling
   },
 });
 

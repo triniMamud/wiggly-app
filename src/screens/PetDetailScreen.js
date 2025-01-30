@@ -1,6 +1,7 @@
 // PetDetailScreen.js
-import React, { useState, useMemo, useRef } from 'react';
-import { View, Text, Image, TouchableOpacity, Dimensions, Alert, ActivityIndicator } from 'react-native';
+import React, { useState, useMemo, useRef, useCallback } from 'react';
+import { View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import styles from './styles/petDetailScreenStyle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Carousel from 'react-native-snap-carousel';
@@ -60,7 +61,7 @@ const PetDetailScreen = ({ route, navigation }) => {
           showModal(
             '¡Necesitamos más información!',
             'Antes de postularte, necesitamos que completes un formulario. Esto es por única vez, y será compartido con el refugio donde se encuentre la mascota que elegiste.',
-            require('../../assets/AdobeStock_599085812.png'), // Add your image path here
+            require('../../assets/adobeStock_599085812.png'), // Add your image path here
             openUserForm 
           );
     /*axios.get('YOUR_API_ENDPOINT/user/isFormAnswered')
@@ -112,6 +113,10 @@ const PetDetailScreen = ({ route, navigation }) => {
     // Implement the logic to refresh the postulaciones
   };
 
+  const handleBottomSheetChange = useCallback((index) => {
+    setBottomSheetIndex(index);
+  }, []);
+
   return (
     <View style={styles.container}>
       <Carousel
@@ -121,9 +126,10 @@ const PetDetailScreen = ({ route, navigation }) => {
         itemWidth={width}
         onSnapToItem={(index) => setActiveSlide(index)}
       />
-      <BottomSheet
+      <BottomSheet 
+        reduceMotion={false}
         style={styles.bottomSheet}   
-        onChange={index => setBottomSheetIndex(index)}      
+        onChange={handleBottomSheetChange}      
         handleIndicatorStyle={styles.handleIndicatorStyle}
         ref={bottomSheetRef} 
         index={0} 
@@ -169,23 +175,24 @@ const PetDetailScreen = ({ route, navigation }) => {
               <Text style={styles.refugioText}>Los hermanos paticorti</Text>
             </View>
           </View>
-          <View style={styles.detailContainer}>
-            <Text style={styles.detailText}>{formulateSentencePetBathroom()}</Text>
-            <Text style={styles.detailText}>{formulateSentencePetGoodWithChildrenAndPets()}</Text>
-            <Text style={styles.detailText}>{pet.pet.generalInfo}</Text>
+          <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}> 
+              <Text style={styles.detailText}>{formulateSentencePetBathroom()}</Text>
+              <Text style={styles.detailText}>{formulateSentencePetGoodWithChildrenAndPets()}</Text>
+              <Text style={styles.detailText}>{pet.pet.generalInfo}</Text>   
+          </ScrollView>
+          <View style={styles.fadeContainer}>
+            {bottomSheetIndex < snapPoints.length - 1 && (
+              <LinearGradient
+                colors={['rgba(255,255,255,0)', 'white']}
+                style={styles.gradientOverlay}
+              />
+            )}
           </View>
         </View>
       </BottomSheet>
-      <View style={styles.fadeContainer}>
-        {bottomSheetIndex < snapPoints.length - 1 && (
-        <LinearGradient
-          colors={['rgba(255,255,255,0)', 'white']}
-          style={styles.gradientOverlay}
-        />)}
-        <TouchableOpacity style={styles.button} onPress={handlePostularse}>
-          <Text style={styles.buttonText}>Postularse</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.button} onPress={handlePostularse}>
+        <Text style={styles.buttonText}>Postularse</Text>
+      </TouchableOpacity>
     </View>
   );
 };
