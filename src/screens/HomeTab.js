@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {View, FlatList, Text, Image, TextInput, TouchableOpacity, ActivityIndicator, StyleSheet} from 'react-native';
 import apiClient from '../api/apiClient';
-import HomeCard from '../components/HomeCard';
+import HomeCard from '../components/cards/HomeCard';
 import styles from './styles/homeScreenStyle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -144,7 +144,7 @@ const HomeTab = ({ navigation }) => {
         data={pets}
         renderItem={({ item }) => (
           <View style={styles.item}>
-            <HomeCard pet={item.pet} images={item.pet.images} onToggleFav={toggleFav} />
+            <HomeCard pet={item.pet} images={item.pet.images} onToggleFav={toggleFav}/>
           </View>
         )}
         keyExtractor={(item) => item.pet.pet.id.toString()}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Alert, Modal, Text, TouchableOpacity, Image } from 'react-native';
-import FormCard from '../components/FormCard';
+import FormCard from '../components/cards/FormCard';
 import confettiAnimation from '../../assets/confetti.gif';
 import CongratulationsModal from '../components/modals/CongratulationsModal';
 

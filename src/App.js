@@ -26,13 +26,14 @@ const Stack = createStackNavigator();
 
 const UserFormScreenWrapper = () => {
   const navigation = useNavigation();
+  
   const handleBackToHome = () => {
     navigation.navigate('HomeTab');
   };
 
   return (
-    <UserFormScreen navigation={navigation}>
-      <TouchableOpacity onPress={ ()=> navigation.navigate('HomeTab')}>
+    <UserFormScreen navigation={navigation} style={{backgroundColor: 'rgba(0,0,0,0)'}}>
+      <TouchableOpacity onPress={ ()=> navigation.navigate('HomeTab')} >
           <Icon  name="arrow-back" size={24} color="#E76801" style={{ marginLeft: 20 }} />
       </TouchableOpacity>
     </UserFormScreen>
@@ -54,11 +55,7 @@ const App = () => {
             headerTitle: '',
             headerStyle: styles.headerStyle,
             headerTintColor: '#E76801',}}  component={PetDetailScreen} />
-          <Stack.Screen
-            name="UserFormScreen"
-            component={UserFormScreenWrapper}
-            options={{ headerShown: false }}
-          />
+          <Stack.Screen name="UserFormScreen" component={UserFormScreenWrapper} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </GlobalModalProvider>

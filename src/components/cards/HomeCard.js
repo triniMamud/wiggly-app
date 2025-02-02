@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
-import styles from './styles/homeCardStyle'
+import styles from '../styles/homeCardStyle'
 import Carousel from 'react-native-snap-carousel';
 import { Dimensions } from 'react-native';
 
