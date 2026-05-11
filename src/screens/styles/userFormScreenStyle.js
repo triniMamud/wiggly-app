@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { scale, verticalScale, moderateScale } from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
@@ -7,6 +8,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  /*
   card: {
     width: Dimensions.get('window').width * 0.8,
     padding: 20,
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: '#fff',
     fontSize: 16,
-  },
+  },*/
 });
 
 export default styles;

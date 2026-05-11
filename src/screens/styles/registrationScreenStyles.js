@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { scale, verticalScale, moderateScale } from '../../utils/responsive';
 
 const styles = StyleSheet.create({
   container: {
@@ -6,98 +7,116 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F8F4EE',
-    padding: 20,
+    paddingHorizontal: scale(20),
+    paddingVertical: verticalScale(30),
   },
+
   headerText: {
-    fontSize: 24,
+    fontSize: moderateScale(22),
     fontWeight: 'bold',
     color: '#E76801',
-    marginBottom: 20,
+    marginBottom: scale(20),
   },
+
   input: {
     width: '100%',
-    padding: 10,
-    marginVertical: 5,
-    borderWidth: 1,
+    paddingHorizontal: scale(12),
+    paddingVertical: scale(10),
+    marginVertical: scale(5),
     borderColor: '#E76801',
-    borderRadius: 10,
+    borderRadius: scale(10),
     backgroundColor: '#FDF8F3',
+    fontSize: moderateScale(14),
   },
+
   shelterInputContainer: {
-    position: 'absolute',
-    top: '75%'
+    width: '100%',
   },
+
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
   },
+
   eyeIcon: {
     position: 'absolute',
-    right: 10,
-    padding: 10,
+    right: scale(10),
+    padding: scale(10),
   },
+
   row: {
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
   },
+
   halfInput: {
     width: '48%',
   },
+
   checkboxContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
-    width: '80%',
+    marginVertical: scale(10),
+    width: '100%',
     justifyContent: 'center'
   },
+
   checkboxRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 15,
-    marginLeft: 15,
+    marginHorizontal: scale(8),
     justifyContent: 'center',
-    width: '33%'
+    flex: 1,
   },
+
   errorText: {
     color: 'red',
-    marginTop: -10,
-    //marginBottom: 10,
-    fontSize: 10,
-    textAlign: 'left'
+    fontSize: moderateScale(11),
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    marginBottom: scale(4),
   },
+
   shelterErrorText: {
-    position: 'absolute',
-    top: '76%',
+    alignSelf: 'flex-start',
+    marginBottom: scale(4),
   },
+
   checkboxLabel: {
-    //marginHorizontal: 5,
     color: '#E76801',
-    fontSize: 14
+    fontSize: moderateScale(13),
   },
+
   registerButton: {
-    padding: 15,
-    borderRadius: 50,
+    paddingVertical: scale(14),
+    borderRadius: scale(50),
     width: '100%',
     alignItems: 'center',
-    marginVertical: 10,
-    marginTop: '30%',
+    marginTop: scale(24),
+    marginBottom: scale(16),
   },
+
   registerButtonText: {
     color: '#FFF',
-    fontSize: 16,
+    fontSize: moderateScale(15),
+    fontWeight: 'bold',
+    letterSpacing: 1,
   },
+
   signInText: {
     textAlign: 'center',
     color: '#787878',
-    //marginTop: 10,
+    fontSize: moderateScale(13),
   },
+
   signInLink: {
     color: '#E76801',
     fontWeight: 'bold',
     textDecorationLine: 'underline',
   },
+  
   loadingOverlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',

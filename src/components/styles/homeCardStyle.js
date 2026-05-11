@@ -1,61 +1,64 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { scale, verticalScale, moderateScale } from '../../utils/responsive';
 
 const { width } = Dimensions.get('window');
-const cardWidth = (width / 2) - 18;
+const cardWidth = (width / 2) - scale(18);
 
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    margin: 10,
-    borderRadius: 15,
+    margin: scale(10),
+    borderRadius: scale(15),
     backgroundColor: '#FDF8F3',
     borderColor: '#FDA769',
     borderWidth: 0.5,
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 1 },
-    shadowRadius: 5,
+    shadowRadius: scale(5),
     elevation: 2,
     overflow: 'hidden',
     width: '90%',
-    height: 350,
+    height: verticalScale(350),
   },
   image: {
-    height: 240,
-    resizeMode: 'stretch',
+    height: verticalScale(240),
+    resizeMode: 'cover', 
     width: cardWidth
   },
   favoriteIcon: {
     position: 'absolute',
-    top: 10,
-    right: 10,
+    top: scale(10),
+    right: scale(10),
   },
   detailsContainer: {
-    paddingHorizontal: 10,
-    paddingBottom: 10
+    paddingHorizontal: scale(10),
+    paddingBottom: scale(10),
   },
   name: {
-    fontSize: 18,
+    fontSize: moderateScale(18),
     fontWeight: 'bold',
     color: '#333',
   },
   locationContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 5,
+    marginTop: scale(5),
   },
   location: {
-    marginLeft: 5,
+    marginLeft: scale(5),
     color: '#555',
+    fontSize: moderateScale(13),
   },
   ageContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 5,
+    marginTop: scale(5),
   },
   age: {
-    marginLeft: 5,
+    marginLeft: scale(5),
     color: '#555',
+    fontSize: moderateScale(13),
   },
   genderContainer: {
     flexDirection: 'row',
@@ -64,19 +67,19 @@ const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: 'center',
     width: '100%',
-    marginTop: -30
+    marginTop: scale(-30),
   },
   button: {
     backgroundColor: '#E76801',
     width: '85%',
-    paddingVertical: 7,
-    paddingHorizontal: 10,
-    marginVertical: 10,
-    borderRadius: 15,
+    paddingVertical: scale(7),
+    paddingHorizontal: scale(10),
+    marginVertical: scale(10),
+    borderRadius: scale(15),
   },
   buttonText: {
     color: '#fff',
-    fontSize: 12,
+    fontSize: moderateScale(12),
     fontWeight: 'bold',
     textAlign: 'center',
     letterSpacing: 1
@@ -86,6 +89,10 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
   },
+  imageContainer: {
+    width: cardWidth,
+    height: verticalScale(240),
+  }
 });
 
 export default styles;

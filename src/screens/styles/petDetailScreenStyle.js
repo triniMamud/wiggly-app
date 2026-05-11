@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {useMemo} from 'react';
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -7,132 +8,158 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDF8F3',
     alignItems: 'center'
   },
+
   imageContainer: {
-    height: 500,
+    width: width,
+    height: verticalScale(420),
   },
+
   image: {
     width: '100%',
     height: '100%',
-    resizeMode: 'stretch',
+    resizeMode: 'cover',
   },
+
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 5,
-    marginTop: -10
+    marginBottom: scale(5),
+    marginTop: scale(-10)
   },
+
   favoriteIcon: {
-    width: 30,
-    height: 30,
+    width: scale(30),
+    height: scale(30),
+    alignItems: 'center',
+    justifyContent: 'center'
   },
+
   contentContainer: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingBottom: 15,
-    paddingTop: 5,
-    justifyContent: 'flex-start',
+    paddingHorizontal: scale(20),
+    paddingBottom: scale(15),
+    paddingTop: scale(5),
   },
   detailContainer: {
     paddingBottom: 100,
     overflow: 'visible'
   },
+
   bottomSheet: {
-    flex: 1,
     backgroundColor: '#FDF8F3',
-    borderRadius: 55,
+    borderRadius: scale(55),
   },
+
   handleIndicatorStyle: {
     backgroundColor: '#E76801',
-    width: 40,
-    height: 5,
-    borderRadius: 2.5,
+    width: scale(40),
+    height: scale(5),
+    borderRadius: scale(3)
   },
+
   title: {
-    fontSize: 24,
+    fontSize: moderateScale(22),
     fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#000',
+    color: '#000'
   },
+
   petAttributesContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 3,
-    //marginTop: 3,
+    marginBottom: scale(8)
   },
+
   petAttribute: {
     alignItems: 'center',
     borderColor: '#FDA769',
     borderWidth: 1,
-    borderRadius: 15,
-    paddingHorizontal: 10,
-    paddingBottom: 5,
-    justifyContent: 'space-between',
+    borderRadius: scale(15),
+    paddingHorizontal: scale(8),
+    paddingBottom: scale(5),
+    flex: 1,                     
+    marginHorizontal: scale(3), 
   },
+
   petAttributeText: {
-    fontSize: 16,
+    fontSize: moderateScale(13),
     fontWeight: 'bold',
     flexWrap: 'wrap',
-    maxWidth: 80,
     textAlign: 'center',
     color: '#FDA769',
   },
+
   petAttributeTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 40,
+    height: verticalScale(36),
   },
+
   petAttributeLabel: {
-    fontSize: 12,
+    fontSize: moderateScale(11),
     color: 'rgba(0,0,0,0.6)',
     textAlign: 'center',
   },
+
   button: {
     position: 'absolute',
-    bottom: 10,
+    bottom: scale(10),
     left: '10%',
     right: '10%',
     backgroundColor: '#E76801',
-    borderRadius: 50,
-    paddingVertical: 15,
+    borderRadius: scale(50),
+    paddingVertical: scale(15),
     alignItems: 'center',
+    // sombra para que se vea sobre el contenido
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: scale(2) },
+    shadowOpacity: 0.2,
+    shadowRadius: scale(4),
+    elevation: 4,
   },
+
   buttonText: {
     color: '#FFF',
-    fontSize: 16,
+    fontSize: moderateScale(16),
+    fontWeight: 'bold'
   },
+
   refugioText: {
     color: '#000',
-    marginLeft: 10
+    marginLeft: scale(8),
+    fontSize: moderateScale(14)
   },
+
   refugioContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginTop: 5,
-    marginBottom: 5
+    marginTop: scale(5),
+    marginBottom: scale(5),
   },
+
   detailText: {
     color: '#000',
-    marginBottom: 5
+    fontSize: moderateScale(14),
+    lineHeight: moderateScale(22),
+    marginBottom: scale(5),
   },
+
   fadeContainer: {
     position: 'relative',
-    paddingTop: 30,
+    paddingTop: scale(30),
   },
+
   gradientOverlay: {
     position: 'absolute',
-    bottom: 180,
+    bottom: scale(180),
     left: 0,
     right: 0,
-    height: 100
+    height: scale(100),
   },
+
   scrollContainer: {
     flex: 1, 
-    marginBottom: 25
-  },
-  scrollContent: {
-    //paddingBottom: 100, // Ensures space at the bottom for scrolling
+    marginBottom: scale(25)
   },
 });
 
